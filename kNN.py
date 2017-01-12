@@ -1,9 +1,8 @@
-from  numpy import *
+from numpy import *
 import operator
-
 def createDataSet():
-    group=array([1.0,1.1],[1.0,1.0],[0,0],[0,0.1])
-    labels=['A','A','B','B']
+    group = array([[1.0,1.1],[1.0,1.0],[0,0],[0,0.1]])
+    labels = ['A','A','B','B']
     return group,labels
 # inX用于输入向量
 # dataSet输入的训练样本集
@@ -23,3 +22,4 @@ def classity0(inX,dataSet,labels,k):
         classCount[voteIlable]=classCount.get(voteIlable,0)+1
     sortedClassCount=sorted(classCount.iteritems(),key=operator.itemgetter(1),reverse=True)
     return  sortedClassCount[0][0]
+
