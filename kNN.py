@@ -47,3 +47,5 @@ def autoNorm(dataSet):
     normDataSet=dataSet-tile(minVals,(m,1))
     normDataSet=normDataSet/tile(ranges,(m,1))
     return  normDataSet,ranges,minVals
+
+#wwfwfffffwww
