@@ -1,0 +1,33 @@
+# 知乎装饰器学习
+
+#python的函数是可以当作参数传递的
+# def foo():
+# 	print("foo")
+#
+# def bar(func):
+# 	func()
+#
+# bar(foo)
+
+
+
+#一个简单切面的例子，python装饰器常用于切面的场景
+import logging
+
+# 要给foo增加一个日志功能，功能虽然实现，如果其他方法要增加日志功能，都要添加此类代码，因此把日志方法抽象出来
+def foo():
+	print("i am foo")
+
+def foo():
+	print("a am foo")
+	logging.info("foo is running")
+
+# 如此就把日志方法抽象出来了，但是调用的却是抽象方法名，以实际逻辑相违背
+def use_logging(func):
+	logging.warn("%s is running" % func.__name__)
+	func()
+
+def foo():
+	print("i am foo")
+
+use_logging(foo)
