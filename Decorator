@@ -15,19 +15,41 @@
 import logging
 
 # 要给foo增加一个日志功能，功能虽然实现，如果其他方法要增加日志功能，都要添加此类代码，因此把日志方法抽象出来
-def foo():
-	print("i am foo")
+# def foo():
+# 	print("i am foo")
+#
+# def foo():
+# 	print("a am foo")
+# 	logging.info("foo is running")
+#
+# # 如此就把日志方法抽象出来了，但是调用的却是抽象方法名，以实际逻辑相违背
+# def use_logging(func):
+# 	logging.warn("%s is running" % func.__name__)
+# 	func()
+#
+# def foo():
+# 	print("i am foo")
+#
+# use_logging(foo)
+#
+# # 简单装饰器
+# def use_logging(func):
+# 	def wrapper():
+# 		logging.warn("%s is running" % func.__name__)
+# 		return  func()
+# 	return  wrapper
+# def foo():
+# 	print("i am foo")
+# foo=use_logging(foo)#利用python函数当作参数传递的特性，foo相当于被use_logging包裹了一层
+# foo()
 
-def foo():
-	print("a am foo")
-	logging.info("foo is running")
-
-# 如此就把日志方法抽象出来了，但是调用的却是抽象方法名，以实际逻辑相违背
+# @ 语法糖
 def use_logging(func):
-	logging.warn("%s is running" % func.__name__)
-	func()
-
+	def wrapper():
+		logging.warn("%s is running" % func.__name__)
+		return  func()
+	return  wrapper
+@use_logging
 def foo():
 	print("i am foo")
-
-use_logging(foo)
+foo()
