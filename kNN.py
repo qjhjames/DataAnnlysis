@@ -48,4 +48,4 @@ def autoNorm(dataSet):
     normDataSet=normDataSet/tile(ranges,(m,1))
     return  normDataSet,ranges,minVals
 
-#wwfwfffffwwwee 三十岁
+#wwfwfffffwwwee 三十岁 qwe
