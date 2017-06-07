@@ -36,6 +36,14 @@ def get_everyday_user(fatherArray):
 #	cols=len(fatherArray)
 #	for array in fatherArray:
 
+def get_everyday_increase(countArray):
+	increaseArray=[]
+	increaseArray.append(0)
+	i=0
+	while i<len(countArray)-1:
+		increaseArray.append(countArray[i+1]-countArray[i])
+		i+=1
+	return increaseArray
 
 
 
@@ -45,6 +53,7 @@ def main():
 	#print(len(father))
 	count=get_everyday_user(father)
 	print(count)
+	print(get_everyday_increase(count))
 
 
 	print("完毕")
