@@ -10,6 +10,7 @@ def get_all_col_val_as_array(colnum):
 		i += 1
 	return fatherArray
 
+#获取到当天为止用过的用户数
 def get_everyday_user(fatherArray):
 	#获取天数
 	cols=len(fatherArray)
@@ -31,11 +32,7 @@ def get_everyday_user(fatherArray):
 		i+=1
 	return  everyDayUserArrayCount
 
-
-#def get_everyday_newuser(fatherArray):
-#	cols=len(fatherArray)
-#	for array in fatherArray:
-
+#获取每天新加入的用户数
 def get_everyday_increase(countArray):
 	increaseArray=[]
 	increaseArray.append(0)
@@ -58,31 +55,21 @@ def main():
 	everday_increase=get_everyday_increase(count)
 	print(everyday_all_count)
 	print(everday_increase)
+	for num in everday_increase:
+		print(num)
 	j=0
-	while j<37:
+	while j<78:
 		temp=j+1
-		group_labels.append("第"+str(temp)+"天")
+		group_labels.append(str(temp))
 		x_val.append(temp)
 		j+=1
-	plt.title("用户使用量")
-	plt.xlabel("日期")
-	plt.ylabel("用户数")
+	plt.title("exp_count".encode("utf8"))
+	plt.xlabel("date")
+	plt.ylabel("usercount".encode("utf8"))
 	#plt.plot(x_val, everyday_all_count, 'r', label="至今用户总量")
-	plt.plot(x_val, everday_increase, 'b', label="当天新增用户量")
+	plt.plot(x_val, everday_increase, 'b', label="new_user_for_one_day")
 	plt.grid()
 	plt.show()
-	#while j<38:
-	#	temp=j+1
-	#	group_labels.append("第"+temp+"天")
-	#	x_val.append(temp)
-	#	j+=1
-    #plt.title("用户使用量")
-	#plt.xlabel("日期")
-	#plt.ylabel("用户数")
-	#plt.plot(x_val,everyday_all_count,'r',label="至今用户总量")
-	#plt.plot(x_val,everday_increase,'b',label="当天新增用户量"）
-    #plt.grid()
-	#plt.shwo()
 
 if __name__=="__main__":
     main()
