@@ -58,7 +58,7 @@ def main():
 	for num in everday_increase:
 		print(num)
 	j=0
-	while j<78:
+	while j<79:
 		temp=j+1
 		group_labels.append(str(temp))
 		x_val.append(temp)
@@ -66,7 +66,7 @@ def main():
 	plt.title("exp_count".encode("utf8"))
 	plt.xlabel("date")
 	plt.ylabel("usercount".encode("utf8"))
-	#plt.plot(x_val, everyday_all_count, 'r', label="至今用户总量")
+	plt.plot(x_val, everyday_all_count, 'r', label="至今用户总量")
 	plt.plot(x_val, everday_increase, 'b', label="new_user_for_one_day")
 	plt.grid()
 	plt.show()
