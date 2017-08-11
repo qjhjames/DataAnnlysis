@@ -58,7 +58,7 @@ def main():
 	for num in everday_increase:
 		print(num)
 	j=0
-	while j<140:
+	while j<142:
 		temp=j+1
 		group_labels.append(str(temp))
 		x_val.append(temp)
